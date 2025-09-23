@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-    "scripts": {
+ "scripts": {
     "start": "node index.js",
     "build-frontend": "cd ../user-management-dashboard && npm install && npm run build",
-    "heroku-postbuild": "npm run build-frontend"
+    "heroku-postbuild": "npm run build-frontend",
+    "postinstall": "npm rebuild sqlite3 --build-from-source"
   },
   "keywords": [],
   "author": "",
