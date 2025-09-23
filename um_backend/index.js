@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const {open} = require('sqlite');
-const sqlite3 = require('sqlite3');
-const path = require('path');
+import express from 'express';
+import cors from 'cors';
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
+import path from 'path';
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
