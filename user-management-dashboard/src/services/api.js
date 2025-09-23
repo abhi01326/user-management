@@ -1,5 +1,5 @@
 // src/services/api.js
-const BASE_URL = "http://localhost:3000/users";
+const BASE_URL = "https://user-management-psaw.onrender.com/users";
 
 // Fetch employees with pagination
 export const fetchEmployees = async (page = 1) => {

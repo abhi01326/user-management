@@ -14,7 +14,7 @@ const EmployeeDetails = ({ employee, deleteUser, departments }) => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/users/${employee.id}`, {
+      const res = await fetch(`https://user-management-psaw.onrender.com/users/${employee.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
