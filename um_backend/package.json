@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commnjs",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "build-frontend": "cd ../user-management-dashboard && npm install && npm run build",
