@@ -91,10 +91,4 @@ app.patch('/users/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-const frontendPath = path.join(__dirname, "../user-management-dashboard/build");
-app.use(express.static(frontendPath));
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
 
