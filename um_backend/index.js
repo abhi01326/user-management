@@ -3,6 +3,10 @@ const cors = require('cors');
 const {open} = require('sqlite');
 const sqlite3 = require('sqlite3');
 const path = require('path');
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let db = null;
 const dbPath = path.join(__dirname, 'usersDB.db');
@@ -87,6 +91,7 @@ app.patch('/users/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+<<<<<<< HEAD
 const frontendPath = path.join(__dirname, "../user-management-dashboard/build");
 app.use(express.static(frontendPath));
 
@@ -98,3 +103,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+=======
+app.use(express.static(path.join(__dirname, "../um_frontend/dist")));
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "../um_frontend/dist/index.html"));
+});
+>>>>>>> c1a3567 (Fix Express wildcard routing and update backend config)
