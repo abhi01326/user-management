@@ -107,4 +107,3 @@ app.use(express.static(path.join(__dirname, "../um_frontend/dist")));
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../um_frontend/dist/index.html"));
 });
->>>>>>> c1a3567 (Fix Express wildcard routing and update backend config)
