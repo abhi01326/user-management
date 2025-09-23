@@ -18,7 +18,7 @@ const initializeDBAndServer = async () => {
             driver: sqlite3.Database,
         });
         app.listen(3000, () => {
-            console.log('Server Running at http://localhost:3000/');
+            console.log('Server Running ');
         });
     } catch (e) {
         console.log(`DB Error: ${e.message}`);
@@ -86,4 +86,15 @@ app.patch('/users/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+const frontendPath = path.join(__dirname, "../user-management-dashboard/build");
+app.use(express.static(frontendPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
