@@ -40,10 +40,10 @@ app.get('/users', async (req, res) => {
 
 app.post('/users', async (req, res) => {
   try {
-    const { firstname, lastname, email, department } = req.body;
+    const { firstName, lastName, email, department } = req.body;
     await db.run(
       `INSERT INTO users (firstname, lastname, email, department) VALUES (?, ?, ?, ?)`,
-      [firstname, lastname, email, department]
+      [firstName, lastName, email, department]
     );
     res.status(201).json({ message: 'User Added Successfully' });
   } catch (err) {
