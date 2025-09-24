@@ -27,6 +27,7 @@ export const deleteEmployee = async (id) => {
 
 // Add employee
 export const addEmployee = async (employeeData) => {
+  console.log(emplyeeData)
   try {
     const response = await fetch(BASE_URL, {
       method: "POST",
